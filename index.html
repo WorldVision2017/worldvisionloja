@@ -2,48 +2,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World Vision - Início</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Vision</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>World Vision</h1>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Produtos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">World Vision</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-    <main>
-        <section class="intro">
-            <h2>Bem-vindo à World Vision</h2>
-            <p>Soluções criativas em banners, panfletos, cartões, canecas e eletrônicos.</p>
-        </section>
+  <section id="inicio" class="hero">
+    <h1>Bem-vindo à World Vision</h1>
+    <p>Gráfica, personalizados e eletrônicos com qualidade.</p>
+  </section>
 
-        <section class="produtos">
-            <h2>Nossos Produtos</h2>
-            <div class="grid">
-                <div class="item"><img src="banner.jpg"><p>Banners</p></div>
-                <div class="item"><img src="panfleto.jpg"><p>Panfletos</p></div>
-                <div class="item"><img src="cartao.jpg"><p>Cartões de Visita</p></div>
-                <div class="item"><img src="caneca.jpg"><p>Canecas Personalizadas</p></div>
-                <div class="item"><img src="fone.jpg"><p>Fones</p></div>
-                <div class="item"><img src="mouse.jpg"><p>Mouse</p></div>
-                <div class="item"><img src="teclado.jpg"><p>Teclado</p></div>
-                <div class="item"><img src="mousepad.jpg"><p>Mousepad</p></div>
-            </div>
-        </section>
-    </main>
+  <section id="produtos" class="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="produtos-grid">
+      <div class="produto" onclick="enviarWhatsApp('Banner')">
+        <img src="https://source.unsplash.com/300x200/?banner,print" alt="Banner" />
+        <p>Banner</p>
+      </div>
+      <div class="produto" onclick="enviarWhatsApp('Panfleto')">
+        <img src="https://source.unsplash.com/300x200/?flyer,design" alt="Panfleto" />
+        <p>Panfleto</p>
+      </div>
+      <div class="produto" onclick="enviarWhatsApp('Cartão de Visita')">
+        <img src="https://source.unsplash.com/300x200/?businesscard" alt="Cartão" />
+        <p>Cartão de Visita</p>
+      </div>
+      <div class="produto" onclick="enviarWhatsApp('Caneca Personalizada')">
+        <img src="https://source.unsplash.com/300x200/?mug,custom" alt="Caneca" />
+        <p>Caneca Personalizada</p>
+      </div>
+      <div class="produto" onclick="enviarWhatsApp('Fone de Ouvido')">
+        <img src="https://source.unsplash.com/300x200/?headphones" alt="Fone" />
+        <p>Fone de Ouvido</p>
+      </div>
+      <div class="produto" onclick="enviarWhatsApp('Mouse')">
+        <img src="https://source.unsplash.com/300x200/?mouse" alt="Mouse" />
+        <p>Mouse</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>📍 Pacheco Jordão, 6B - Higienópolis</p>
-        <p>📧 romaoworldvision@gmail.com | 📱 WhatsApp</p>
-    </footer>
+  <section id="sobre" class="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Na World Vision, oferecemos o melhor em produtos gráficos, brindes personalizados e eletrônicos com atendimento ágil e de qualidade.</p>
+  </section>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp-button" target="_blank">Fale conosco no WhatsApp</a>
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Endereço: Pacheco Jordão 6B, Higienópolis</p>
+    <p>Email: <a href="mailto:romaoworldvision@gmail.com">romaoworldvision@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/5521992206260" target="_blank">(21) 99220-6260</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 World Vision | WhatsApp: (21) 99220-6260</p>
+  </footer>
+
+  <a href="https://wa.me/5521992206260" class="zap-float" target="_blank">📱</a>
+
+  <audio autoplay loop>
+    <source src="audio/lofi.mp3" type="audio/mp3">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <script>
+    function enviarWhatsApp(produto) {
+      const msg = encodeURIComponent("Olá! Tenho interesse no produto: " + produto);
+      window.open("https://wa.me/5521992206260?text=" + msg, "_blank");
+    }
+  </script>
 </body>
 </html>
